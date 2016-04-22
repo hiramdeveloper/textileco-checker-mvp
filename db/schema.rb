@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419034348) do
+ActiveRecord::Schema.define(version: 20160420171243) do
+
+  create_table "checkers", force: :cascade do |t|
+    t.integer  "id_user",      limit: 4
+    t.datetime "initial_date"
+    t.datetime "last_date"
+    t.date     "date_day"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

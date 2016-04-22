@@ -1,7 +1,20 @@
 Rails.application.routes.draw do
+  get 'checker/index'
+
   devise_for :users
-  get 'welcome/index'
-  get 'welcome/barcode'
+  #get 'welcome/index'
+  #get 'welcome/barcode'
+  resources :welcome
+
+  get 'employees/users/index'
+  get 'employees/users/show/:id' => 'employees/users#show'
+
+  get 'admin/users/index'
+  get 'admin/users/show/:id' => 'admin/users#show'
+
+  resources :checkers
+  #get 'checker/new'
+  #post 'checker/create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,29 @@
+<%= form_for @checkin do |f| %>
+	<div class="form-group">
+		<%= f.text_field :id_user, placeholder: "Barcode", class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<div class="col-md-6">
+			<label>CheckIn</label>
+			<input type="radio" name="checker[chk]" value="in" />
+		</div>
+		<div class="col-md-6">
+			<label>CheckOut</label>
+			<input type="radio" name="checker[chk]" value="out" />
+		</div><br><br><br><br><br>
+	</div>
+	<div class="form-group">
+		<%= f.submit "Save", class: "btn btn-primary" %>
+	</div>
+<%end%>
+
+<%= Date.today %> <%= Time.now %> <%= @chkInitialDate %>
+
+<!--form method="post" action="create">
+	<div class="form-group">
+		<input type="text" class="form-control" name="new[id_user]" placeholder="Barcode" />
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">Save</button>
+	</div>
+</form-->

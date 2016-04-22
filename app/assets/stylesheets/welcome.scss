@@ -6,8 +6,17 @@
 	text-align: justify;
 }
 
+td.text-center{
+	text-align: center;
+}
+
 .ascii{width: 500px}
-table.barby-barcode { border-spacing: 0; }
+table.barby-barcode { border-spacing: 0; margin: 0 auto; }
 tr.barby-row {}
 td.barby-cell { width: 3px; height: 100px; }
 td.barby-cell.on { background: #000; }
+
+ul.list-only{
+	list-style: none;
+	margin-left: -5%;
+}
