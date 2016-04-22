@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 20160420171243) do
     t.datetime "initial_date"
     t.datetime "last_date"
     t.date     "date_day"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "work_hours",   limit: 4
+    t.string   "extra",        limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "users", force: :cascade do |t|

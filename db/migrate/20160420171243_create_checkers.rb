@@ -5,6 +5,8 @@ class CreateCheckers < ActiveRecord::Migration
       t.timestamp :initial_date
       t.timestamp :last_date
       t.date :date_day
+      t.integer :work_hours
+      t.string :extra
 
       t.timestamps null: false
     end
