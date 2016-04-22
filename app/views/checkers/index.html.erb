@@ -1,2 +1,31 @@
-<h1>Checker#index</h1>
-<p>Find me in app/views/checker/index.html.erb</p>
+<%= form_tag("/checkers/show", method: "get") do %>
+	<%= label_tag(:chk_id_user, "Barcode!") %>*
+  	<input type="text" name="chk[id_user]" id="chk" class="form-control" /><br>
+
+  	<%= label_tag(:chk, "Month") %>
+	<select name="chk[month]" class="form-control">
+		<option value="01">January</option>
+		<option value="02">Febrery</option>
+		<option value="03">March</option>
+		<option value="04">April</option>
+		<option value="05">May</option>
+		<option value="06">June</option>
+		<option value="07">July</option>
+		<option value="08">August</option>
+		<option value="09">September</option>
+		<option value="10">October</option>
+		<option value="11">November</option>
+		<option value="12">December</option>
+	</select><br>
+
+	<%= label_tag(:chk, "Year") %>
+	<select name="chk[year]" class="form-control">
+		<option value="2016">2016</option>
+	</select><br>
+
+  	<button type="submit" class="btn btn-primary">Send</button>
+<%end%>
+
+<!--%= Date.today-5 %-->
+
+<!--%= Date.today %> < %= Time.now %> < %= @chkInitialDate %-->

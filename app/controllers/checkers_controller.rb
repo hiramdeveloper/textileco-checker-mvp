@@ -1,7 +1,7 @@
 class CheckersController < ApplicationController
 
   def index
-
+    @checkings = Checker.new
   end
 
   #params[:id]
@@ -19,7 +19,6 @@ class CheckersController < ApplicationController
           work_past = pastDays.initial_date-10.hours
           newHour = work_past.strftime("%H").to_i
           #newHour =  work_past.to_i.between?(9,14) ?  14 : 18
-          @kedo = newHour
           if newHour >= 9
             newHour = 14
           else
@@ -60,5 +59,18 @@ class CheckersController < ApplicationController
   
   end
 
+  def show
+
+    if !params[:chk][:id_user].blank? && !params[:chk][:month].blank? && !params[:chk][:year].blank?
+      fh_I = params[:chk][:year]+'-'+params[:chk][:month]+'-01 00:00:00'
+      fh_F = params[:chk][:year]+'-'+params[:chk][:month]+'-31 23:59:59'
+      @userName = User.find(params[:chk][:id_user])
+      @checkings = Checker.where(id_user: params[:chk][:id_user]).where(:created_at => fh_I..fh_F)
+    else
+      redirect_to action: :index
+      flash[:alert] = "You need put your barcode!"
+    end
+
+  end
+
 end
-#Validar si es distinto de nil

@@ -1,0 +1,33 @@
+<h2>Records by: <%=@userName.fullname%></h2>
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>Date's</th>
+			<th>Initial</th>
+			<th>Last</th>
+			<th>Extra</th>
+			<th>Hours</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%total = 0%>
+		<% @checkings.each do |c| %>
+		<% total += c.work_hours %>
+			<tr>
+				<td><%= c.date_day %></th>
+				<td><%= c.initial_date %></th>
+				<td><%= c.last_date %></th>
+				<td><%= c.extra %></th>
+				<td><%= c.work_hours %></th>
+			</tr>
+		<%end%>
+		<tr>
+			<td colspan="4" class="text-right">
+				<strong>TOTAL HOURS</strong>
+			</td>
+			<td><%=total%></td>
+		</tr>
+	</tbody>
+</table>
+<!--%= Date.today-5 %-->
+<!--%= Date.today %> < %= Time.now %> < %= @chkInitialDate %-->

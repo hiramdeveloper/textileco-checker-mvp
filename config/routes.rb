@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'admin/users/show/:id' => 'admin/users#show'
 
   resources :checkers
+  get 'checkers/show/:id' => 'checkers#show'
   #get 'checker/new'
   #post 'checker/create'
   # The priority is based upon order of creation: first created -> highest priority.
